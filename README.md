@@ -8,3 +8,6 @@ Fernando Montaño
 Antonio García
 <br>
 Daniel Barraza
+
+
+Nota: La carpeta Gasera contiene el proyecto de Ionic y la Api es la carpeta con el mismo nombre.
