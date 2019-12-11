@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pedidos Recibidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf = "cargado">
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Usuario</th>
+      <th>Cant.</th>
+    </tr>
+    <tr *ngFor="let pedido of pedidos">
+      <td>{{pedido.id}}</td>
+      <td>{{pedido.user}}</td>
+      <td>{{pedido.cantidad}}</td>
+    </tr>
+  </table>
+
+</ion-content>

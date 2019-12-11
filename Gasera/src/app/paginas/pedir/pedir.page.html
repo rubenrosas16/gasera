@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pedir</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf = "cargado">
+    <form (ngSubmit)="pedido(fPedido)" #fPedido="ngForm">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col>
+              <ion-list>
+                  <ion-item>
+                    <ion-label>Gasera</ion-label>
+                    <ion-select value="brown" okText="Aceptar" cancelText="Cancelar"
+                    name="gasera"
+                    [(ngModel)]="form.idGasera"
+                    required
+                    >
+                        <ion-select-option *ngFor="let gasera of gaseras" [value]="gasera.id">{{gasera.nombre}}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input 
+                    name="cantidad"
+                    type="number"
+                    [(ngModel)]="form.cantidad"
+                    required
+                    placeholder="Cantidad de Cilindros"
+                    ></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label>Dirección</ion-label>
+                    <ion-textarea
+                    name="direccion"
+                    [(ngModel)]="form.direccion"
+                    required 
+                    >
+                    </ion-textarea>
+                  </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+    
+          <ion-row *ngIf="!formCorrecto">
+              <ion-col class="alert-warning">
+                  {{mensaje}}
+              </ion-col>
+          </ion-row>  
+    
+          <ion-row>
+            <ion-col>
+              <ion-button type="submit" color="primary" expand="block">
+                Pedir
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        
+        </ion-grid>
+      </form>
+</ion-content>

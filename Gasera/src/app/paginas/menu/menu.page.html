@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar  >
+    <ion-title>Menú</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf = "cargado">
+    <ion-grid fixed>
+        <ion-row *ngIf = "!usuario.gasera">
+          <ion-col>
+              <ion-button (click) = "Pedir()" type="ion-button" color="primary" expand="block">
+                Pedir
+              </ion-button>
+          </ion-col>   
+        </ion-row>
+        <!--<ion-row *ngIf = "!usuario.gasera">  
+            <ion-col>
+                <ion-button (click) = "MisPedidos()" type="ion-button" color="primary" expand="block">
+                  Mis Pedidos
+                </ion-button>
+            </ion-col>
+        </ion-row>-->
+        <ion-row *ngIf = "usuario.gasera">  
+            <ion-col>
+                <ion-button (click) = "PedidosPendientes()" type="ion-button" color="primary" expand="block">
+                  Pedidos solicitados
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf = "usuario.gasera">
+            <ion-col>
+                <ion-button (click) = "GraficaPedidos()" type="ion-button" color="primary" expand="block">
+                  Grafica de Pedidos
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

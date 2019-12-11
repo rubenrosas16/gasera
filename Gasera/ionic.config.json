@@ -1,0 +1,7 @@
+{
+  "name": "IMSS",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

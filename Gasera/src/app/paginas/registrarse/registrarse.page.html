@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Registrarse</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  
+  <form (ngSubmit)="registro(fRegistro)" #fRegistro="ngForm">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-label>Usuario</ion-label>
+              <ion-input
+                name="usuario"
+                type="usuario"
+                [(ngModel)]="formulario.usuario"
+                required
+              ></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Contraseña</ion-label>
+              <ion-input
+                name="password"
+                type="password"
+                [(ngModel)]="formulario.password"
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Gasera</ion-label>
+                <ion-checkbox
+                name="gasera"
+                [(ngModel)]="formulario.gasera"
+                ></ion-checkbox>
+              </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="!formCorrecto">
+          <ion-col class="alert-warning">
+              {{mensaje}}
+          </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" expand="block">
+            Registrarse
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      
+    </ion-grid>
+  </form>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary"  ></ion-toolbar>
+</ion-footer>
